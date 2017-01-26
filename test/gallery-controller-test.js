@@ -1,7 +1,7 @@
 'use strict';
 
 require('./lib/test-setup.js');
-
+require('angular-mocks');
 const angular = require('angular');
 
 describe('GalleryController', function() {
@@ -13,6 +13,8 @@ describe('GalleryController', function() {
   });
 
   describe('this.title property', () => {
-    it('should have a title property that equals "welcome to the gallery"')
+    it('should have a title property that equals "welcome to the gallery"', () => {
+      expect(this.galleryCtrl.title).toBe('welcome to the gallery');
+    });
   });
 });
