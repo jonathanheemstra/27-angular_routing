@@ -37,9 +37,9 @@ module.exports = {
   entry: `${__dirname}/app/entry.js`,
   devtool: production ? false : 'eval',
   plugins,
-  output : {
+  output: {
     path: 'build',
-    filename: 'app.js'
+    filename: 'bundle.js'
   },
   sassLoader: {
     includePaths: [`${__dirname}/app/scss`]
@@ -56,7 +56,7 @@ module.exports = {
         loader: 'html'
       },
       {
-        test: /\.(woff|tff|svg|eot).*/,
+        test: /\.(woff|ttf|svg|eot).*/,
         loader: 'url?limit=10000&name=image/[hash].[ext]'
       },
       {
